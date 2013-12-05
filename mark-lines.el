@@ -266,15 +266,12 @@ BUG: goto the end of a buffer that's not an empty line, try <C-x> <C-p> then,
           (progn
             (unless (or (bolp) (eobp))
               (forward-line 0)
-              ;; we don't need this, since previous/next line funciton
-              ;; obliterates point any how
-;;              (setq p (point))
               (setq result t))
             (goto-char (mark))
             (unless (or (bolp) (eobp))
               (set-mark (point-at-bol))
               (setq result t))
-            (goto-char p)) ; but we do need to go back to the old line
+            (goto-char p))
         (goto-char (mark))
         (unless (or (bolp) (eobp))
           (set-mark (point-at-bol))
