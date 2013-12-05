@@ -255,10 +255,7 @@
 The mark and point are modified.  The region is expanded in such a way that
 the displacements of mark and point are minimal.
 
-Return t if point or mark had to be moved.
-
-BUG: goto the end of a buffer that's not an empty line, try <C-x> <C-p> then,
-<C-p>, it crashes."
+Return t if point or mark had to be moved."
   (when (region-active-p)
     (let ((p (point))
           result)
