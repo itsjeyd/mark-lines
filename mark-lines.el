@@ -28,7 +28,7 @@
 ;; `mark-lines' provides whole line selection functionality. The
 ;; behaviour of triple-clicking mouse-1 is used as a model.
 
-;; In (GNU |X)Emacs, when you triple click on a line, that line is
+;; In GNU Emacs, when you triple click on a line, that line is
 ;; automatically selected, and you go into a mode of region selection
 ;; where lines are added to the region when you move the point up or
 ;; down the buffer by dragging the mouse. The original line always
@@ -152,29 +152,12 @@
 (defvar mark-lines nil
   "is t when a mark-line is active")
 
-;; compatibility
-
-(unless (fboundp 'region-active-p)
-  (defun region-active-p ()
-    "Xemacs compatibility."
-    mark-active))
-
-(defmacro zmacs-region-stay-please ()
-  "make region stay in XEmacs."
-  (when (boundp 'zmacs-region-stays)
-    '(setq zmacs-region-stays t)))
-
 ;; setup
 
-(add-hook (eval-and-compile
-            (if (boundp 'zmacs-deactivate-region-hook)
-                'zmacs-deactivate-region-hook
-              'deactivate-mark-hook))
-          'mark-lines-deactivate-hook)
+(add-hook 'deactivate-mark-hook 'mark-lines-deactivate-hook)
 
 (defadvice next-line (around mark-lines activate)
   "support whole line marking."
-  (zmacs-region-stay-please)
   (if mark-lines
       (let ((goal-column 0)
              old-point
@@ -198,7 +181,6 @@
 
 (defadvice previous-line (around mark-lines activate)
   "support whole line marking."
-  (zmacs-region-stay-please)
   (if mark-lines
       (let ((goal-column 0)
              old-point
