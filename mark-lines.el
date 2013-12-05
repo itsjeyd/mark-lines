@@ -46,8 +46,8 @@
 ;;
 ;; 3. Add your desired key-bindings to your ~/.emacs, e.g.:
 ;;
-;;     (global-set-key [(control x) (control p)] 'mark-lines-previous-line)
-;;     (global-set-key [(control x) (control n)] 'mark-lines-next-line)
+;;     (global-set-key (kbd "C-x C-p") 'mark-lines-previous-line)
+;;     (global-set-key (kbd "C-x C-n") 'mark-lines-next-line)
 
 ;;; Usage:
 
