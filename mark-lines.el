@@ -96,7 +96,8 @@
 ;;; Caveat:
 
 ;;
-;; * incompatible with `cua-mode'
+;; * v0.5 incompatible with `cua-mode'
+;;   (this has not been confirmed for newer versions)
 ;;
 
 ;;; Known bugs:
