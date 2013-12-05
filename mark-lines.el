@@ -25,18 +25,18 @@
 
 ;;; Commentary:
 
-;; `mark-lines' provides whole line selection functionality.  The behaviour of
-;; triple-clicking mouse-1 is used as a model.
+;; `mark-lines' provides whole line selection functionality. The
+;; behaviour of triple-clicking mouse-1 is used as a model.
 
 ;; In (GNU |X)Emacs, when you triple click on a line, that line is
-;; automatically selected, and you go into a mode of region selection where
-;; lines are added to the region when you move the point up or down the buffer
-;; by dragging the mouse.  The original line always remains selected, and new
-;; lines are added to the region based on the vertical position of point
-;; relative to the original line.
+;; automatically selected, and you go into a mode of region selection
+;; where lines are added to the region when you move the point up or
+;; down the buffer by dragging the mouse. The original line always
+;; remains selected, and new lines are added to the region based on
+;; the vertical position of point relative to the original line.
 
-;; This package seeks to duplicate that behaviour with the keyboard, with some
-;; improvements.  See usage for details.
+;; This package seeks to duplicate that behaviour with the keyboard,
+;; with some improvements. See usage for details.
 
 ;;; Installation:
 
@@ -63,27 +63,28 @@
 
 ;; *** activation ***
 
-;; Line marking is NOT implemented as a minor mode.  You have to activate it
-;; by invoking one of the "entry commands".
+;; Line marking is NOT implemented as a minor mode. You have to
+;; activate it by invoking one of the "entry commands".
 
-;; Once active, the current region is expanded to consist of only whole lines
-;; by the invoking any of the "line movement commands".
+;; Once active, the current region is expanded to consist of only
+;; whole lines by the invoking any of the "line movement commands".
 
-;; `mark-lines-next-line' and `mark-lines-previous-line' expand the region by
-;; moving the mark; the line at point will always stay in the region.
-;; `next-line' and `previous-line' expand the region by moving the point;
-;; the line at mark will always stay in the region.  THIS IS THE TRIPLE-CLICK
-;; BEHAVIOUR.
+;; `mark-lines-next-line' and `mark-lines-previous-line' expand the
+;; region by moving the mark; the line at point will always stay in
+;; the region. `next-line' and `previous-line' expand the region by
+;; moving the point; the line at mark will always stay in the region.
+;; THIS IS THE TRIPLE-CLICK BEHAVIOUR.
 
 ;; *** deactivation ***
 
-;; `mark-lines' can be deactivated without aborting the current region by
-;; prefixing any "entry command" with the `universal-argument' (bound to <C-u>
-;; by default).
+;; `mark-lines' can be deactivated without aborting the current region
+;; by prefixing any "entry command" with the `universal-argument'
+;; (bound to <C-u> by default).
 
-;; If `mark-lines-electric' is non-nil (this is the default) the point will be
-;; moved to a more interesting position on the line once the region
-;; deactivates, since the beginning is usually not very interesting.
+;; If `mark-lines-electric' is non-nil (this is the default) the point
+;; will be moved to a more interesting position on the line once the
+;; region deactivates, since the beginning is usually not very
+;; interesting.
 
 ;; `mark-lines' is automatically deactivated when the region deactivates.
 
