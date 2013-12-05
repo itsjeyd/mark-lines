@@ -143,7 +143,7 @@
   :group 'mark-lines)
 
 (defcustom mark-lines-electric t
-  "*Non-nill means when the region deactivates, try to point to a place of
+  "*Non-nil means when the region deactivates, try to point to a place of
   interest."
   :type 'boolean
   :group 'mark-lines)
