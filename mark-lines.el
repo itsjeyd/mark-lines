@@ -91,7 +91,7 @@
 
 ;;; Compatibility:
 
-;; Tested with XEmacs 21.4.12, and GNU Emacs 21.2.1
+;; Tested with: GNU Emacs 24.3.1
 
 ;;; Caveat:
 
